@@ -1,0 +1,29 @@
+.container {
+  height: 75%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 3px solid;
+}
+
+.title {
+  font-family: Bebas Neue, cursive;
+  font-stretch: condensed;
+  font-size: 35px;
+}
+
+.blog-icon {
+  font-size: 20px;
+}
+
+.footer {
+  overflow-y: auto;
+  text-align: center;
+}
