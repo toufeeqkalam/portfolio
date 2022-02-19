@@ -4,12 +4,12 @@ import {ContentComponent} from "./components/content/content.component";
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: ContentComponent
   },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/',
     pathMatch: 'full'
   }
 ];
