@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {faLinkedin, faTwitter, faGithub, faFacebook} from '@fortawesome/free-brands-svg-icons';
 import {Router} from "@angular/router";
+import {map, Observable, shareReplay} from "rxjs";
 
 @Component({
   selector: 'app-navigation',
@@ -18,6 +18,7 @@ export class NavigationComponent {
   faTwitter = faTwitter;
   faGithub = faGithub;
   faFacebook = faFacebook;
+  faEnvelope = faEnvelope;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
