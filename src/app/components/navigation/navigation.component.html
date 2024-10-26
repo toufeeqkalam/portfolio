@@ -8,7 +8,7 @@
         (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">clear</mat-icon>
       </button>
-      <span>TOUFEEQKALAM.</span>
+      <span>TOUFEEQKALAM</span>
     </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="https://www.linkedin.com/in/toufeeqkalam" target="_blank">LinkedIn</a>
@@ -23,12 +23,13 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
-<!--      <button-->
-<!--        type="button"-->
-<!--        mat-icon-button-->
-<!--        (click)="drawer.toggle()">-->
-<!--        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>-->
-<!--      </button>-->
+      <button
+        [hidden]="!isMobile"
+        type="button"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
       <span><mat-icon class="code-icon">code</mat-icon>TOUFEEQKALAM</span>
       <span class="spacer"></span>
       <div [hidden]="isMobile" class="social-icons">
