@@ -17,7 +17,6 @@ export class NavigationComponent {
   faLinkedIn = faLinkedin;
   faTwitter = faTwitter;
   faGithub = faGithub;
-  faFacebook = faFacebook;
   faEnvelope = faEnvelope;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -25,7 +24,6 @@ export class NavigationComponent {
       map(result => result.matches),
       shareReplay()
     );
-
 
   constructor(private breakpointObserver: BreakpointObserver, public router: Router) {
     this.isHandset$.subscribe(value => {

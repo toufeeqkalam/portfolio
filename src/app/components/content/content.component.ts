@@ -16,7 +16,7 @@ export class ContentComponent implements OnInit {
   year: number = new Date().getFullYear();
   safeUrl: SafeResourceUrl;
 
-  constructor(private httpClient: HttpClient, public location: Location, public router: Router, public sanitizer: DomSanitizer) { }
+  constructor(private httpClient: HttpClient, public router: Router) { }
 
   ngOnInit(): void {
     this.route = location.href;
