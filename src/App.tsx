@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
+import avatarImg from './assets/avatar.png'
 
 function Particles() {
   const particles = useMemo(() =>
@@ -197,7 +198,7 @@ function App() {
               </div>
               <div className="relative z-10 w-[130px] h-[130px] md:w-[170px] md:h-[170px] rounded-full overflow-hidden shadow-[0_8px_32px_rgba(100,108,255,0.25)] group">
                 <img
-                  src="/avatar.png"
+                  src={avatarImg}
                   alt="Profile"
                   className="w-full h-full object-cover grayscale-[20%] contrast-[1.05] group-hover:grayscale-0 group-hover:contrast-[1.1] group-hover:scale-110 transition-all duration-500"
                 />
