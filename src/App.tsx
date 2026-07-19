@@ -78,7 +78,7 @@ function App() {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           )}
         </button>
-        <span className="font-heading font-bold text-sm bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">TK</span>
+        <span className="font-heading font-bold text-sm bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent"><span className="text-indigo-500 opacity-60">&lt;</span>TK<span className="text-indigo-500 opacity-60">/&gt;</span></span>
         <button
           onClick={() => setDark(!dark)}
           className="text-gray-400 hover:text-indigo-500 transition-colors"
@@ -132,9 +132,12 @@ function App() {
       {/* Desktop Side Navigation */}
       <nav className="hidden md:flex fixed top-0 left-0 w-[72px] h-screen bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-md border-r border-gray-200 dark:border-gray-800 flex-col items-center justify-between py-8 z-50">
         <div className="flex flex-col items-center gap-6">
+          <a href="#hero" className="font-heading font-bold text-sm bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent mb-4">
+            <span className="text-indigo-500 opacity-60">&lt;</span>TK<span className="text-indigo-500 opacity-60">/&gt;</span>
+          </a>
           <button
             onClick={() => setDark(!dark)}
-            className="text-gray-400 hover:text-indigo-500 transition-colors mb-4"
+            className="text-gray-400 hover:text-indigo-500 transition-colors mb-2"
             aria-label="Toggle dark mode"
           >
             {dark ? (
@@ -174,7 +177,7 @@ function App() {
       <main className="w-full md:ml-[72px] md:w-[calc(100%-72px)] mt-14 md:mt-0">
 
         {/* Hero */}
-        <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pb-8 overflow-hidden">
           {/* Background blobs */}
           <div className="absolute top-1/4 -left-32 w-96 h-96 bg-indigo-400/10 dark:bg-indigo-500/5 rounded-full blur-3xl animate-pulse-glow" />
           <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/5 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
@@ -235,22 +238,24 @@ function App() {
             >
               get_in_touch()
             </a>
-          </div>
 
-          {/* Scroll indicator */}
-          <a href="#about" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 hover:text-indigo-500 transition-colors animate-bounce">
-            <span className="text-[0.6rem] font-mono uppercase tracking-widest">scroll</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </a>
+            {/* Scroll indicator */}
+            <div className="mt-12">
+              <a href="#about" className="inline-flex flex-col items-center gap-2 text-gray-400 hover:text-indigo-500 transition-colors animate-bounce">
+                <span className="text-[0.6rem] font-mono uppercase tracking-widest">scroll</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </section>
 
         {/* Gradient divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
 
         {/* About */}
-        <section id="about" className="max-w-3xl mx-auto py-16 md:py-24 px-6">
+        <section id="about" className="max-w-3xl mx-auto py-16 md:py-24 px-6 min-h-screen flex flex-col justify-center">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 dark:text-gray-100 mb-6">
               <span className="text-indigo-400 opacity-40">{'{ '}</span>
@@ -267,11 +272,11 @@ function App() {
           {/* Stats row */}
           <div className="grid grid-cols-3 gap-4 max-w-md mx-auto mb-12">
             <div className="text-center p-4 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">5+</div>
+              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">10+</div>
               <div className="text-[0.65rem] md:text-xs text-gray-400 font-mono mt-1">years_exp</div>
             </div>
             <div className="text-center p-4 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent">20+</div>
+              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent">10+</div>
               <div className="text-[0.65rem] md:text-xs text-gray-400 font-mono mt-1">projects</div>
             </div>
             <div className="text-center p-4 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
@@ -283,21 +288,31 @@ function App() {
           {/* Skills with icons */}
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              { name: 'TypeScript', color: 'from-blue-500 to-blue-600' },
-              { name: 'React', color: 'from-cyan-400 to-cyan-500' },
-              { name: 'Node.js', color: 'from-green-500 to-green-600' },
-              { name: 'Python', color: 'from-yellow-500 to-yellow-600' },
-              { name: 'AWS', color: 'from-orange-400 to-orange-500' },
-              { name: 'PostgreSQL', color: 'from-blue-600 to-blue-700' },
-              { name: 'Docker', color: 'from-sky-400 to-sky-500' },
-              { name: 'Kubernetes', color: 'from-blue-500 to-indigo-600' },
-              { name: 'Java', color: 'from-red-500 to-red-600' },
+              { name: 'Java', color: 'from-red-500 to-red-600', icon: 'devicon-java-plain' },
+              { name: 'Spring Boot', color: 'from-green-500 to-green-600', icon: 'devicon-spring-plain' },
+              { name: 'Spring Cloud', color: 'from-green-400 to-emerald-500', icon: 'devicon-spring-plain' },
+              { name: 'AWS', color: 'from-orange-400 to-orange-500', icon: 'devicon-amazonwebservices-plain-wordmark' },
+              { name: 'MariaDB', color: 'from-blue-800 to-blue-900', icon: 'devicon-mariadb-plain' },
+              { name: 'Elasticsearch', color: 'from-yellow-400 to-yellow-500', icon: 'devicon-elasticsearch-plain' },
+              { name: 'Docker', color: 'from-sky-400 to-sky-500', icon: 'devicon-docker-plain' },
+              { name: 'Kubernetes', color: 'from-blue-500 to-indigo-600', icon: 'devicon-kubernetes-plain' },
+              { name: 'Prometheus', color: 'from-orange-500 to-red-500', icon: 'devicon-prometheus-original' },
+              { name: 'Node.js', color: 'from-green-500 to-green-600', icon: 'devicon-nodejs-plain' },
+              { name: 'React', color: 'from-cyan-400 to-cyan-500', icon: 'devicon-react-original' },
+              { name: 'Angular', color: 'from-red-600 to-red-700', icon: 'devicon-angular-plain' },
+              { name: 'Cassandra', color: 'from-blue-400 to-blue-600', icon: 'devicon-cassandra-plain' },
+              { name: 'GitHub Actions', color: 'from-gray-600 to-gray-800', icon: 'devicon-githubactions-plain' },
+              { name: 'Splunk', color: 'from-green-400 to-green-600', icon: 'devicon-splunk-original-wordmark' },
+              { name: 'Resilience4j', color: 'from-teal-500 to-teal-600', icon: 'devicon-java-plain' },
+              { name: 'Helm', color: 'from-blue-500 to-blue-700', icon: 'devicon-helm-original' },
+              { name: 'Terraform', color: 'from-purple-500 to-purple-700', icon: 'devicon-terraform-plain' },
             ].map((skill) => (
               <span
                 key={skill.name}
-                className="group relative px-4 py-2 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-xs md:text-sm font-mono text-gray-600 dark:text-gray-300 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default overflow-hidden"
+                className="group relative flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-xs md:text-sm font-mono text-gray-600 dark:text-gray-300 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default overflow-hidden"
               >
                 <span className={`absolute inset-0 bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                <i className={`${skill.icon} text-base md:text-lg`} />
                 {skill.name}
               </span>
             ))}
@@ -308,23 +323,127 @@ function App() {
         <div className="h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
 
         {/* Contact */}
-        <section id="contact" className="max-w-2xl mx-auto py-16 md:py-24 px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 dark:text-gray-100 mb-6">
-            <span className="text-indigo-400 opacity-40">{'{ '}</span>
-            contact
-            <span className="text-indigo-400 opacity-40">{' }'}</span>
-          </h2>
-          <div className="bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-8 max-w-sm mx-auto mb-8">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <p className="text-gray-400 text-xs font-mono mb-4">toufeeq.kalam@gmail.com</p>
-            <a
-              href="mailto:toufeeq.kalam@gmail.com"
-              className="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-mono text-sm px-6 py-3 rounded-md hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(100,108,255,0.35)] transition-all duration-300 w-full"
+        <section id="contact" className="max-w-2xl mx-auto py-16 md:py-24 px-6 min-h-screen flex flex-col justify-center">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 dark:text-gray-100 mb-4">
+              <span className="text-indigo-400 opacity-40">{'{ '}</span>
+              contact
+              <span className="text-indigo-400 opacity-40">{' }'}</span>
+            </h2>
+            <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base font-mono">
+              <span className="text-gray-300 dark:text-gray-600">// </span>let's connect
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Contact form */}
+            <form
+              action="https://formspree.io/f/xwvgbeqj"
+              method="POST"
+              className="bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-6 space-y-4"
             >
-              send_message()
-            </a>
+              <div>
+                <label htmlFor="name" className="block text-xs font-mono text-gray-400 mb-1.5">
+                  <span className="text-indigo-400">const</span> name <span className="text-gray-300 dark:text-gray-600">=</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  className="w-full px-4 py-2.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-mono text-gray-800 dark:text-gray-200 placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-400 transition-all"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-xs font-mono text-gray-400 mb-1.5">
+                  <span className="text-indigo-400">const</span> email <span className="text-gray-300 dark:text-gray-600">=</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="user@example.com"
+                  className="w-full px-4 py-2.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-mono text-gray-800 dark:text-gray-200 placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-400 transition-all"
+                />
+              </div>
+              <div>
+                <label htmlFor="subject" className="block text-xs font-mono text-gray-400 mb-1.5">
+                  <span className="text-indigo-400">const</span> subject <span className="text-gray-300 dark:text-gray-600">=</span>
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="Project collaboration"
+                  className="w-full px-4 py-2.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-mono text-gray-800 dark:text-gray-200 placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-400 transition-all"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-xs font-mono text-gray-400 mb-1.5">
+                  <span className="text-indigo-400">const</span> message <span className="text-gray-300 dark:text-gray-600">=</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={5}
+                  placeholder="Hey, I'd love to chat about..."
+                  className="w-full px-4 py-2.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-mono text-gray-800 dark:text-gray-200 placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-400 transition-all resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-mono text-sm px-6 py-3 rounded-md hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(100,108,255,0.35)] transition-all duration-300"
+              >
+                send_message()
+              </button>
+            </form>
+
+            {/* Contact info side */}
+            <div className="flex flex-col gap-4">
+              <div className="bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-6 flex items-center gap-4 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors">
+                <div className="w-12 h-12 shrink-0 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <p className="text-xs font-mono text-gray-400 mb-0.5">email</p>
+                  <a href="mailto:toufeeq.kalam@gmail.com" className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors">toufeeq.kalam@gmail.com</a>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-6 flex items-center gap-4 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors">
+                <div className="w-12 h-12 shrink-0 rounded-lg bg-gradient-to-br from-[#181717] to-gray-700 dark:from-gray-200 dark:to-gray-400 flex items-center justify-center shadow-lg">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+                <div>
+                  <p className="text-xs font-mono text-gray-400 mb-0.5">github</p>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors">github.com/toufeeq</a>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-6 flex items-center gap-4 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors">
+                <div className="w-12 h-12 shrink-0 rounded-lg bg-gradient-to-br from-[#0A66C2] to-blue-700 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </div>
+                <div>
+                  <p className="text-xs font-mono text-gray-400 mb-0.5">linkedin</p>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors">linkedin.com/in/toufeeq</a>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-6 flex items-center gap-4 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors">
+                <div className="w-12 h-12 shrink-0 rounded-lg bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center shadow-lg">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <p className="text-xs font-mono text-gray-400 mb-0.5">location</p>
+                  <p className="text-sm font-mono text-gray-700 dark:text-gray-300">Available Remotely</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
