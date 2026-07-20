@@ -420,7 +420,7 @@ function App() {
                 </div>
                 <div>
                   <p className="text-xs font-mono text-gray-400 mb-0.5">github</p>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors">github.com/toufeeq</a>
+                  <a href="https://github.com/toufeeqkalam" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors">github.com/toufeeq</a>
                 </div>
               </div>
 
@@ -430,7 +430,7 @@ function App() {
                 </div>
                 <div>
                   <p className="text-xs font-mono text-gray-400 mb-0.5">linkedin</p>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors">linkedin.com/in/toufeeq</a>
+                  <a href="https://www.linkedin.com/in/toufeeqkalam" target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors">linkedin.com/in/toufeeq</a>
                 </div>
               </div>
 
